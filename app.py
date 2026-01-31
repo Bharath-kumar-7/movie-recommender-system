@@ -13,7 +13,7 @@ if not os.path.exists("movie_dict.pkl"):
     gdown.download("https://drive.google.com/uc?id=1IrO8LoNs71PBup3NXoyV1RYHXM-Z7Hyq", "movie_dict.pkl", quiet=False)
 
 
-
+hi
 def fetch_poster(movie_id):
     res = requests.get(f'https://api.themoviedb.org/3/movie/{movie_id}?api_key=3f6556440913c2186095fa8ffc1cef83&language=en-US')
     data = res.json()
