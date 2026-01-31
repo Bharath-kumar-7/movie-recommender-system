@@ -116,9 +116,6 @@ This project uses:
 
 ## 📸 Screenshots
 
-### Home Page
-![Home Screenshot](images/home.png)
-
 ### Recommendations Page
 ![Recommendation Screenshot](images/recommendations.png)
 
