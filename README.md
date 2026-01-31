@@ -147,6 +147,34 @@ scikit-learn
 
 ---
 
+## 📂 Preprocessing Folder
+
+The preprocessing folder contains the datasets and Jupyter Notebook used during the data preparation phase of this project.
+
+This notebook includes:
+
+Data cleaning steps
+
+Feature engineering techniques
+
+Core logic used to transform raw data
+
+Fundamental concepts applied in the project
+
+The purpose of this folder is to provide a clear understanding of how the data was processed before building the final model.
+
+⚠️ Note:
+The files in this folder are not required to run the final application. They are included only for reference and documentation purposes to help understand the workflow and methodology behind the project.
+
+📥 Dataset Source
+
+The dataset used in this project can also be downloaded from Kaggle:
+
+TMDB Movie Metadata Dataset:
+https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata
+
+You can download the dataset directly from the above link also.
+
 ## 👨‍💻 Author
 Badagala Bharath Kumar
 Machine Learning Enthusiast
