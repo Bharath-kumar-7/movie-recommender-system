@@ -75,27 +75,44 @@ selected_movie_name = st.selectbox(
 # ---------------- DISPLAY ---------------- #
 if st.button('Recommend'):
     names, posters, ratings = recommended(selected_movie_name)
-
-    cols = st.columns(5, gap="large")
+    cols = st.columns(5)
 
     for idx, col in enumerate(cols):
         with col:
-            st.markdown(
-                f"<h4 style='text-align:center;'>{names[idx]}</h4>",
-                unsafe_allow_html=True
-            )
-
+            # FIXED TITLE HEIGHT FOR ALIGNMENT
             st.markdown(
                 f"""
-                <div style="display:flex; justify-content:center;">
-                    <img src="{posters[idx]}" 
-                         style="width:100%; max-width:220px; height:340px; object-fit:cover; border-radius:12px;">
+                <div style='text-align:center; color:white; height:60px; 
+                            display:flex; align-items:center; justify-content:center;'>
+                    <h5>{names[idx]}</h5>
                 </div>
                 """,
                 unsafe_allow_html=True
             )
 
+            # POSTER
             st.markdown(
-                f"<p style='text-align:center; font-weight:bold;'>⭐ Rating: {ratings[idx]}</p>",
+                f"""
+                <div style='display:flex; justify-content:center;'>
+                    <img src="{posters[idx]}" height="300" 
+                         style="border-radius:10px; object-fit:cover;">
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
+
+            # RATING
+            st.markdown(
+                f"""
+                <div style='text-align:center; 
+                            background-color:rgba(0,0,0,0.7);
+                            padding:5px;
+                            border-radius:8px;
+                            color:gold;
+                            font-weight:bold;
+                            margin-top:5px;'>
+                ⭐ Rating: {ratings[idx]}
+                </div>
+                """,
                 unsafe_allow_html=True
             )
