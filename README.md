@@ -139,10 +139,15 @@ Add user login & favorites
 ## 📚 Libraries Used
 
 streamlit
+
 pandas
+
 requests
+
 pickle
+
 gdown
+
 scikit-learn
 
 ---
