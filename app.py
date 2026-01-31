@@ -65,52 +65,59 @@ movies = pd.DataFrame(movies_dict)
 similarity = pickle.load(open('similarity.pkl', 'rb'))
 
 # ---------------- UI ---------------- #
+st.markdown("<div style='margin-bottom:20px;'></div>", unsafe_allow_html=True)
 st.title('🎬 Movie Recommender System')
+st.markdown("<div style='margin-bottom:15px;'></div>", unsafe_allow_html=True)
 
 selected_movie_name = st.selectbox(
     'Select a movie to recommend',
     movies['title'].values
 )
 
+st.markdown("<div style='margin-bottom:20px;'></div>", unsafe_allow_html=True)
+
 # ---------------- DISPLAY ---------------- #
 if st.button('Recommend'):
+    st.markdown("<div style='margin-bottom:25px;'></div>", unsafe_allow_html=True)
     names, posters, ratings = recommended(selected_movie_name)
-    cols = st.columns(5)
+    cols = st.columns(5, gap="medium")
 
     for idx, col in enumerate(cols):
         with col:
-            # FIXED TITLE HEIGHT FOR ALIGNMENT
             st.markdown(
                 f"""
-                <div style='text-align:center; color:white; height:60px; 
-                            display:flex; align-items:center; justify-content:center;'>
-                    <h5>{names[idx]}</h5>
+                <div style='text-align:center; color:white; height:80px;
+            display:flex; align-items:center; justify-content:center;
+            margin-bottom:15px; padding:10px; min-width:150px;
+            white-space:normal; word-break:keep-all; overflow-wrap:normal;
+            line-height:1.2;'>
+                    <h5 style='margin:0; font-size:14px;'>{names[idx]}</h5>
                 </div>
                 """,
                 unsafe_allow_html=True
             )
 
-            # POSTER
             st.markdown(
-                f"""
-                <div style='display:flex; justify-content:center;'>
-                    <img src="{posters[idx]}" height="300" 
-                         style="border-radius:10px; object-fit:cover;">
-                </div>
-                """,
-                unsafe_allow_html=True
-            )
+    f"""
+    <div style='display:flex; justify-content:center; margin-bottom:15px;'>
+        <img src="{posters[idx]}"
+             style="width:100%; max-width:220px; height:300px;
+                    border-radius:10px; object-fit:cover;">
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
-            # RATING
+
             st.markdown(
                 f"""
                 <div style='text-align:center; 
                             background-color:rgba(0,0,0,0.7);
-                            padding:5px;
+                            padding:8px;
                             border-radius:8px;
                             color:gold;
                             font-weight:bold;
-                            margin-top:5px;'>
+                            margin-top:15px;'>
                 ⭐ Rating: {ratings[idx]}
                 </div>
                 """,
