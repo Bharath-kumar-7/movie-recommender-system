@@ -79,6 +79,31 @@ if st.button('Recommend'):
 
     for idx, col in enumerate(cols):
         with col:
-            st.text(names[idx])
-            st.image(posters[idx], use_container_width=True)
-            st.caption(f"⭐ Rating: {ratings[idx]}")
+            st.markdown(
+                f"<h5 style='text-align:center; color:white'>{names[idx]}</h5>",
+                unsafe_allow_html=True
+            )
+
+            st.markdown(
+                f"""
+                <div style='display:flex; justify-content:center;'>
+                    <img src="{posters[idx]}" height="300" style="border-radius:10px;">
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
+
+            st.markdown(
+                f"""
+                <div style='text-align:center; 
+                            background-color:rgba(0,0,0,0.7);
+                            padding:5px;
+                            border-radius:8px;
+                            color:gold;
+                            font-weight:bold;
+                            margin-top:5px;'>
+                ⭐ Rating: {ratings[idx]}
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
