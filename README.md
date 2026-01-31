@@ -175,7 +175,11 @@ https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata
 
 You can download the dataset directly from the above link also.
 
+---
 ## 👨‍💻 Author
 Badagala Bharath Kumar
+
 Machine Learning Enthusiast
+
 B.Tech Student
+
