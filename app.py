@@ -80,29 +80,18 @@ if st.button('Recommend'):
     for idx, col in enumerate(cols):
         with col:
             st.markdown(
-                f"<h5 style='text-align:center; color:white'>{names[idx]}</h5>",
-                unsafe_allow_html=True
-            )
-
-            st.markdown(
                 f"""
-                <div style='display:flex; justify-content:center;'>
-                    <img src="{posters[idx]}" height="300" style="border-radius:10px;">
-                </div>
-                """,
-                unsafe_allow_html=True
-            )
-
-            st.markdown(
-                f"""
-                <div style='text-align:center; 
-                            background-color:rgba(0,0,0,0.7);
-                            padding:5px;
-                            border-radius:8px;
-                            color:gold;
-                            font-weight:bold;
-                            margin-top:5px;'>
-                ⭐ Rating: {ratings[idx]}
+                <div style="
+                    background: rgba(0,0,0,0.6);
+                    padding:10px;
+                    border-radius:15px;
+                    text-align:center;
+                ">
+                    <h4 style="color:white; min-height:60px;">{names[idx]}</h4>
+                    <img src="{posters[idx]}" style="height:350px; border-radius:10px;">
+                    <p style="color:gold; font-size:18px; font-weight:bold;">
+                        ⭐ Rating: {ratings[idx]}
+                    </p>
                 </div>
                 """,
                 unsafe_allow_html=True
