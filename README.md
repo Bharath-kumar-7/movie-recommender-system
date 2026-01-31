@@ -158,13 +158,13 @@ The preprocessing folder contains the datasets and Jupyter Notebook used during 
 
 This notebook includes:
 
-Data cleaning steps
+->Data cleaning steps
 
-Feature engineering techniques
+->Feature engineering techniques
 
-Core logic used to transform raw data
+->Core logic used to transform raw data
 
-Fundamental concepts applied in the project
+->Fundamental concepts applied in the project
 
 The purpose of this folder is to provide a clear understanding of how the data was processed before building the final model.
 
