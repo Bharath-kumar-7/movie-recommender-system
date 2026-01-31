@@ -75,24 +75,27 @@ selected_movie_name = st.selectbox(
 # ---------------- DISPLAY ---------------- #
 if st.button('Recommend'):
     names, posters, ratings = recommended(selected_movie_name)
-    cols = st.columns(5)
+
+    cols = st.columns(5, gap="large")
 
     for idx, col in enumerate(cols):
         with col:
             st.markdown(
+                f"<h4 style='text-align:center;'>{names[idx]}</h4>",
+                unsafe_allow_html=True
+            )
+
+            st.markdown(
                 f"""
-                <div style="
-                    background: rgba(0,0,0,0.6);
-                    padding:10px;
-                    border-radius:15px;
-                    text-align:center;
-                ">
-                    <h4 style="color:white; min-height:60px;">{names[idx]}</h4>
-                    <img src="{posters[idx]}" style="height:350px; border-radius:10px;">
-                    <p style="color:gold; font-size:18px; font-weight:bold;">
-                        ⭐ Rating: {ratings[idx]}
-                    </p>
+                <div style="display:flex; justify-content:center;">
+                    <img src="{posters[idx]}" 
+                         style="width:100%; max-width:220px; height:340px; object-fit:cover; border-radius:12px;">
                 </div>
                 """,
+                unsafe_allow_html=True
+            )
+
+            st.markdown(
+                f"<p style='text-align:center; font-weight:bold;'>⭐ Rating: {ratings[idx]}</p>",
                 unsafe_allow_html=True
             )
